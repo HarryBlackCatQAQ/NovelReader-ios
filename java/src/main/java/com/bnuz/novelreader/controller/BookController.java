@@ -26,7 +26,7 @@ public class BookController {
     public List<Book> test(String content){
         System.out.println("你传给我了:" + content);
         List<Book> list = new LinkedList<Book>();
-        for(int i = 0;i < 10;i++){
+        for(int i = 0;i < 1;i++){
             Book book = new Book();
             book.setName("" + i);
             book.setImageUrl("" + i);

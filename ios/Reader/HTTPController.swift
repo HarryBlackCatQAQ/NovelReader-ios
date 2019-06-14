@@ -14,13 +14,15 @@ class HTTPController{
     var delegate:HttpProtocol?
     //接受网址,回调代理的方法,传回数据
     func onSearch(url:String) {
-        Alamofire.request(url, method:.get).responseJSON(options: JSONSerialization.ReadingOptions.mutableContainers) { (data) -> Void in
+        Alamofire.request(url, method:.post).responseJSON(options: JSONSerialization.ReadingOptions.mutableContainers) { (data) -> Void in
             if data.result.isSuccess {
                 self.delegate?.didRecieveResults(results: data.result.value as AnyObject)
             } else {
                 print("DATA获取失败")
             }
         }
+        
+        //Alamofire.request()
     }
 }
 

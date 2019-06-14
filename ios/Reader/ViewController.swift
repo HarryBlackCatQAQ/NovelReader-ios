@@ -20,7 +20,7 @@ class ViewController: UIViewController,HttpProtocol {
         let a = obj.test();
         
         label.text = "\(a)"
-        didRecieveResults(results: eHttp.onSearch(url: "http://tingapi.ting.baidu.com/v1/restserver/ting?from=webapp_music&method=baidu.ting.billboard.billList&format=json&type=1&size=10") as AnyObject)
+        didRecieveResults(results: eHttp.onSearch(url: "localhost:8080/searching") as AnyObject)
     }
     
     func didRecieveResults(results: AnyObject) {

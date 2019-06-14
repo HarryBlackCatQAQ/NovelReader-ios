@@ -20,7 +20,7 @@ class ViewController: UIViewController,HttpProtocol {
         let a = obj.test();
         
         label.text = "\(a)"
-        didRecieveResults(results: eHttp.onSearch(url: "http://127.0.0.1") as AnyObject)
+        didRecieveResults(results: eHttp.onSearch(url: "localhost:8080/searching") as AnyObject)
     }
     
     func didRecieveResults(results: AnyObject) {

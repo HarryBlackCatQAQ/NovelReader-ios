@@ -20,4 +20,18 @@ public class BookController {
         System.out.println("你传给我了:" + content);
         return null;
     }
+
+    @PostMapping(value = "/test")
+    public List<Book> test(String content){
+        System.out.println("你传给我了:" + content);
+        List<Book> list = new LinkedList<Book>();
+        for(int i = 0;i < 10;i++){
+            Book book = new Book();
+            book.setName("" + i);
+            book.setImageUrl("" + i);
+            book.setAuthor("" + i);
+            list.add(book);
+        }
+        return list;
+    }
 }

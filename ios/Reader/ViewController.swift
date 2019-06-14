@@ -20,7 +20,20 @@ class ViewController: UIViewController,HttpProtocol {
         let a = obj.test();
         
         label.text = "\(a)"
-        didRecieveResults(results: eHttp.onSearch(url: "localhost:8080/searching") as AnyObject)
+        didRecieveResults(results: eHttp.onSearch(url: "localhost:8080/test") as AnyObject)
+        
+        let urlString = "http://tingapi.ting.baidu.com/v1/restserver/ting?from=webapp_music&method=baidu.ting.billboard.billList&format=json&type=1&size=10"
+        
+        Alamofire.request("http://localhost:8080/test",method: .post).responseJSON(options: JSONSerialization.ReadingOptions.mutableContainers){ (data) -> Void in
+                print(data.result.value)
+        }
+        
+//        Alamofire.request("http://localhost:8080/test",method: .post).response { response in // method defaults to `.get`
+//            print("======")
+//            print(response.data)
+//            print("======")
+//        }
+        
     }
     
     func didRecieveResults(results: AnyObject) {

@@ -19,10 +19,10 @@ public class WebCrawlerServiceImpl implements WebCrawlerService {
         List<Book> bookList = new LinkedList<Book>();
 
         bookList.addAll(vodtwWebCrawlerService.getBook(content));
+        System.out.println("Vodtw size:" + bookList.size());
 
         setBookListIndex(bookList);
 
-        System.out.println("size:" + bookList.size());
         return bookList;
     }
 

@@ -9,7 +9,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -20,8 +19,6 @@ import java.util.concurrent.Executors;
 
 @Service("VodtwWebCrawlerServiceImpl")
 public class VodtwWebCrawlerServiceImpl implements WebCrawlerService {
-
-    @Autowired
     private HtmlUnit htmlUnit;
 
     private String vodtwUrl = "https://www.vodtw.com";
@@ -31,11 +28,12 @@ public class VodtwWebCrawlerServiceImpl implements WebCrawlerService {
         List<Book> BookList = null;
         try {
 
+            htmlUnit = new HtmlUnit();
+
             HtmlPage htmlPage = htmlUnit.getHtmlPage(vodtwUrl);
 
             // 获取搜索输入框
             HtmlInput input = (HtmlInput) htmlPage.getByXPath("//*[@id=\"searchwarpper\"]/form/ul/li[2]/input").get(0);
-
             input.setValueAttribute(content);
 
             // 获取搜索按钮

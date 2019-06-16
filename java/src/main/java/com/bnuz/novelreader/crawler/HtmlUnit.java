@@ -4,11 +4,9 @@ package com.bnuz.novelreader.crawler;
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-@Component
 public class HtmlUnit {
     private WebClient webClient;
 

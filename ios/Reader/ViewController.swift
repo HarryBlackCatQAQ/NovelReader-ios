@@ -10,35 +10,58 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController: UIViewController,HttpProtocol {
+struct GroceryProduct: Codable{
+    var name: String
+    var points: Int
+    var description: String
+}
+
+class ViewController: UIViewController{
     @IBOutlet weak var label: UILabel!
     var eHttp:HTTPController = HTTPController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        eHttp.delegate = self
-        let obj = aaa();
-        let a = obj.test();
+//        var data:String = ""
+        //eHttp.delegate = self
+//        data = eHttp.onSearch(url: "http://localhost:8080/test")
+        //print("idx: " + data)
+        //label.text = "data : \(data)"
         
-        label.text = "\(a)"
-        didRecieveResults(results: eHttp.onSearch(url: "localhost:8080/test") as AnyObject)
+        GetMes();
         
-        let urlString = "http://tingapi.ting.baidu.com/v1/restserver/ting?from=webapp_music&method=baidu.ting.billboard.billList&format=json&type=1&size=10"
         
-        Alamofire.request("http://localhost:8080/test",method: .post).responseJSON(options: JSONSerialization.ReadingOptions.mutableContainers){ (data) -> Void in
-                print(data.result.value)
-        }
-        
-//        Alamofire.request("http://localhost:8080/test",method: .post).response { response in // method defaults to `.get`
-//            print("======")
-//            print(response.data)
-//            print("======")
-//        }
         
     }
     
-    func didRecieveResults(results: AnyObject) {
+    func GetMes(){
+        var headers:Dictionary = [String:String]()
+
+shi        Alamofire.request("http://localhost:8080/searching", method: .get,  parameters: ["content":"斗罗大陆"]).responseJSON{ (data) in
+            if data.result.isSuccess {
+                //self.label.text = (self.didRecieveResults(results: data.result.value as AnyObject))
+                print("===" + (self.didRecieveResults(results: data.result.value as AnyObject)))
+            }else{
+                print("DATA获取失败")
+            }
+        }
+        
+//        Alamofire.request("http://localhost:8080/test",method: .get, parameters: "斗罗大陆").responseJSON{ (data) in
+//            if data.result.isSuccess {
+//                self.label.text = (self.didRecieveResults(results: data.result.value as AnyObject))
+//                //                print("===" + res)
+//            }else{
+//                print("DATA获取失败")
+//            }
+//        }
+    }
+    
+    func didRecieveResults(results: AnyObject) -> String{
         let json = JSON(results)
-        print(json)
+       print(json)
+        let idx = json[0]["idx"].stringValue
+        print(idx)
+        return idx;
     }
     
 }

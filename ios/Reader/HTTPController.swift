@@ -13,19 +13,24 @@ class HTTPController{
     //定义一个代理
     var delegate:HttpProtocol?
     //接受网址,回调代理的方法,传回数据
-    func onSearch(url:String) {
-        Alamofire.request(url, method:.post).responseJSON(options: JSONSerialization.ReadingOptions.mutableContainers) { (data) -> Void in
+    func onSearch(url:String) -> String{
+        var res:String = "9"
+        
+        Alamofire.request(url,method: .post).responseJSON{ (data) in
             if data.result.isSuccess {
-                self.delegate?.didRecieveResults(results: data.result.value as AnyObject)
-            } else {
+ //               res = (self.delegate?.didRecieveResults(results: data.result.value as AnyObject))!
+//                print("===" + res)
+            }else{
                 print("DATA获取失败")
             }
         }
         
-        //Alamofire.request()
+        
+        //print("===" + res)
+        return res
     }
 }
 
 protocol HttpProtocol {
-    func didRecieveResults(results:AnyObject)
+    func didRecieveResults(results:AnyObject) -> String
 }

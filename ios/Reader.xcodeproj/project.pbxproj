@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A75D4C8F22B23048008F3F62 /* test.mm in Sources */ = {isa = PBXBuildFile; fileRef = A75D4C8E22B23048008F3F62 /* test.mm */; };
-		A75D4C9222B231A6008F3F62 /* testC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A75D4C9022B231A6008F3F62 /* testC.cpp */; };
 		A7AF1EC622B22F2C001D1D67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF1EC522B22F2C001D1D67 /* AppDelegate.swift */; };
 		A7AF1EC822B22F2C001D1D67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF1EC722B22F2C001D1D67 /* ViewController.swift */; };
 		A7AF1ECB22B22F2C001D1D67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7AF1EC922B22F2C001D1D67 /* Main.storyboard */; };
@@ -43,10 +41,6 @@
 		1B71045A31EF4E677872244E /* Pods-Reader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.release.xcconfig"; path = "Target Support Files/Pods-Reader/Pods-Reader.release.xcconfig"; sourceTree = "<group>"; };
 		4AA8AC1A18B63D1F0A99A54D /* Pods_Reader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75D4C8D22B23047008F3F62 /* Reader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reader-Bridging-Header.h"; sourceTree = "<group>"; };
-		A75D4C8E22B23048008F3F62 /* test.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = test.mm; sourceTree = "<group>"; };
-		A75D4C9022B231A6008F3F62 /* testC.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = testC.cpp; sourceTree = "<group>"; };
-		A75D4C9122B231A6008F3F62 /* testC.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = testC.hpp; sourceTree = "<group>"; };
-		A75D4C9522B236A6008F3F62 /* aaa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aaa.h; sourceTree = "<group>"; };
 		A7AF1EC222B22F2C001D1D67 /* Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7AF1EC522B22F2C001D1D67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7AF1EC722B22F2C001D1D67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,11 +129,7 @@
 				A7AF1ECC22B22F2E001D1D67 /* Assets.xcassets */,
 				A7AF1ECE22B22F2E001D1D67 /* LaunchScreen.storyboard */,
 				A7AF1ED122B22F2E001D1D67 /* Info.plist */,
-				A75D4C8E22B23048008F3F62 /* test.mm */,
 				A75D4C8D22B23047008F3F62 /* Reader-Bridging-Header.h */,
-				A75D4C9022B231A6008F3F62 /* testC.cpp */,
-				A75D4C9122B231A6008F3F62 /* testC.hpp */,
-				A75D4C9522B236A6008F3F62 /* aaa.h */,
 				A7C4CF1322B3256C00918FF5 /* HTTPController.swift */,
 			);
 			path = Reader;
@@ -357,9 +347,7 @@
 			files = (
 				A7AF1EC822B22F2C001D1D67 /* ViewController.swift in Sources */,
 				A7C4CF1422B3256C00918FF5 /* HTTPController.swift in Sources */,
-				A75D4C9222B231A6008F3F62 /* testC.cpp in Sources */,
 				A7AF1EC622B22F2C001D1D67 /* AppDelegate.swift in Sources */,
-				A75D4C8F22B23048008F3F62 /* test.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

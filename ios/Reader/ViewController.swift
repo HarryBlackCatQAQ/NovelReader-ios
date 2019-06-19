@@ -37,7 +37,7 @@ class ViewController: UIViewController{
     func GetMes(){
         var headers:Dictionary = [String:String]()
 
-shi        Alamofire.request("http://localhost:8080/searching", method: .get,  parameters: ["content":"斗罗大陆"]).responseJSON{ (data) in
+        Alamofire.request("http://localhost:8080/searching", method: .get,  parameters: ["content":"斗罗大陆"]).responseJSON{ (data) in
             if data.result.isSuccess {
                 //self.label.text = (self.didRecieveResults(results: data.result.value as AnyObject))
                 print("===" + (self.didRecieveResults(results: data.result.value as AnyObject)))

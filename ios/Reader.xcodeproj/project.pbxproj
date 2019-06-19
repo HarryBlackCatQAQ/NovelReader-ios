@@ -15,7 +15,6 @@
 		A7AF1EDB22B22F2E001D1D67 /* ReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF1EDA22B22F2E001D1D67 /* ReaderTests.swift */; };
 		A7AF1EE622B22F2E001D1D67 /* ReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF1EE522B22F2E001D1D67 /* ReaderUITests.swift */; };
 		A7C4CF1222B323CD00918FF5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C4CF1122B323CD00918FF5 /* Alamofire.framework */; };
-		A7C4CF1422B3256C00918FF5 /* HTTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C4CF1322B3256C00918FF5 /* HTTPController.swift */; };
 		A7C4CF1622B32EE900918FF5 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C4CF1522B32EE900918FF5 /* SwiftyJSON.framework */; };
 		FBA681E1BD451168F2D45590 /* Pods_Reader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA8AC1A18B63D1F0A99A54D /* Pods_Reader.framework */; };
 /* End PBXBuildFile section */
@@ -55,7 +54,6 @@
 		A7AF1EE522B22F2E001D1D67 /* ReaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderUITests.swift; sourceTree = "<group>"; };
 		A7AF1EE722B22F2E001D1D67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7C4CF1122B323CD00918FF5 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7C4CF1322B3256C00918FF5 /* HTTPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPController.swift; sourceTree = "<group>"; };
 		A7C4CF1522B32EE900918FF5 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F4F244ACB898AD49457FD8 /* Pods-Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.debug.xcconfig"; path = "Target Support Files/Pods-Reader/Pods-Reader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,7 +128,6 @@
 				A7AF1ECE22B22F2E001D1D67 /* LaunchScreen.storyboard */,
 				A7AF1ED122B22F2E001D1D67 /* Info.plist */,
 				A75D4C8D22B23047008F3F62 /* Reader-Bridging-Header.h */,
-				A7C4CF1322B3256C00918FF5 /* HTTPController.swift */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -346,7 +343,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7AF1EC822B22F2C001D1D67 /* ViewController.swift in Sources */,
-				A7C4CF1422B3256C00918FF5 /* HTTPController.swift in Sources */,
 				A7AF1EC622B22F2C001D1D67 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

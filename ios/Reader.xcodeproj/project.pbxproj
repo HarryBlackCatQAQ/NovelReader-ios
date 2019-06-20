@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7410BA522BB6E230030DD23 /* null.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7410BA422BB6E230030DD23 /* null.gif */; };
 		A7AF1EC622B22F2C001D1D67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF1EC522B22F2C001D1D67 /* AppDelegate.swift */; };
 		A7AF1EC822B22F2C001D1D67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF1EC722B22F2C001D1D67 /* ViewController.swift */; };
 		A7AF1ECB22B22F2C001D1D67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7AF1EC922B22F2C001D1D67 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		1B71045A31EF4E677872244E /* Pods-Reader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.release.xcconfig"; path = "Target Support Files/Pods-Reader/Pods-Reader.release.xcconfig"; sourceTree = "<group>"; };
 		4AA8AC1A18B63D1F0A99A54D /* Pods_Reader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7410BA422BB6E230030DD23 /* null.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = null.gif; path = ../../../../Desktop/null.gif; sourceTree = "<group>"; };
 		A75D4C8D22B23047008F3F62 /* Reader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reader-Bridging-Header.h"; sourceTree = "<group>"; };
 		A7AF1EC222B22F2C001D1D67 /* Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7AF1EC522B22F2C001D1D67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		A7AF1EC422B22F2C001D1D67 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				A7410BA422BB6E230030DD23 /* null.gif */,
 				A7AF1EC522B22F2C001D1D67 /* AppDelegate.swift */,
 				A7AF1EC722B22F2C001D1D67 /* ViewController.swift */,
 				A7AF1EC922B22F2C001D1D67 /* Main.storyboard */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7AF1ED022B22F2E001D1D67 /* LaunchScreen.storyboard in Resources */,
+				A7410BA522BB6E230030DD23 /* null.gif in Resources */,
 				A7AF1ECD22B22F2E001D1D67 /* Assets.xcassets in Resources */,
 				A7AF1ECB22B22F2C001D1D67 /* Main.storyboard in Resources */,
 			);
@@ -522,19 +526,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FHR8QT998V;
 				INFOPLIST_FILE = Reader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Reader;
+				PRODUCT_BUNDLE_IDENTIFIER = BNUZ.edu.leechk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Reader/Reader-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -544,18 +553,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FHR8QT998V;
 				INFOPLIST_FILE = Reader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Reader;
+				PRODUCT_BUNDLE_IDENTIFIER = BNUZ.edu.leechk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Reader/Reader-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

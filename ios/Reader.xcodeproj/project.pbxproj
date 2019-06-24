@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A7410BA522BB6E230030DD23 /* null.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7410BA422BB6E230030DD23 /* null.gif */; };
+		A780236522C09B69005328D6 /* bookDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780236422C09B69005328D6 /* bookDetails.swift */; };
 		A7AF1EC622B22F2C001D1D67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF1EC522B22F2C001D1D67 /* AppDelegate.swift */; };
 		A7AF1EC822B22F2C001D1D67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF1EC722B22F2C001D1D67 /* ViewController.swift */; };
 		A7AF1ECB22B22F2C001D1D67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7AF1EC922B22F2C001D1D67 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		4AA8AC1A18B63D1F0A99A54D /* Pods_Reader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7410BA422BB6E230030DD23 /* null.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = null.gif; path = ../../../../Desktop/null.gif; sourceTree = "<group>"; };
 		A75D4C8D22B23047008F3F62 /* Reader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reader-Bridging-Header.h"; sourceTree = "<group>"; };
+		A780236422C09B69005328D6 /* bookDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookDetails.swift; sourceTree = "<group>"; };
 		A7AF1EC222B22F2C001D1D67 /* Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7AF1EC522B22F2C001D1D67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7AF1EC722B22F2C001D1D67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				A7AF1ECE22B22F2E001D1D67 /* LaunchScreen.storyboard */,
 				A7AF1ED122B22F2E001D1D67 /* Info.plist */,
 				A75D4C8D22B23047008F3F62 /* Reader-Bridging-Header.h */,
+				A780236422C09B69005328D6 /* bookDetails.swift */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 			files = (
 				A7AF1EC822B22F2C001D1D67 /* ViewController.swift in Sources */,
 				A7AF1EC622B22F2C001D1D67 /* AppDelegate.swift in Sources */,
+				A780236522C09B69005328D6 /* bookDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

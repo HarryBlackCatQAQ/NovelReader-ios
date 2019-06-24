@@ -29,7 +29,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         Alamofire.request(ServerUrl, method: .get,  parameters: ["content":bookName]).responseJSON{ (data) in
             if data.result.isSuccess {
                 
-                
+                //https://www.vodtw.com/DownFiles/Book/BookCover/douluodalu%E2%85%A3zhongjidouluo.jpg
                 var jsonData:JSON
                 jsonData = (self.didRecieveResults(results: data.result.value as AnyObject))
                 
@@ -90,6 +90,14 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+//    
+//        self.performSegue(withIdentifier: "bookdetails", sender: self)
+//    
+//    }
+
+
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         isSearch = false
         self.sb.text = ""
@@ -109,7 +117,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     
     func onSearch(str:String){
         isSearch = true
-        GetMes(bookName: str)
+        //GetMes(bookName: str)
+        GetMes(bookName: "斗罗大陆")
         self.tv.reloadData()
     }
 }

@@ -8,6 +8,7 @@ public class Book {
     private String webType;
     private int idx;
     private String url;
+    private String htmlContent;
 
     public String getImageUrl() {
         return imageUrl;
@@ -57,6 +58,14 @@ public class Book {
         this.url = url;
     }
 
+    public String getHtmlContent() {
+        return htmlContent;
+    }
+
+    public void setHtmlContent(String htmlContent) {
+        this.htmlContent = htmlContent;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
@@ -66,6 +75,17 @@ public class Book {
                 ", webType='" + webType + '\'' +
                 ", idx=" + idx +
                 ", url='" + url + '\'' +
+                ", htmlContent='" + htmlContent + '\'' +
                 '}';
+    }
+
+    public void print() {
+        System.out.println("Book{" +
+                "imageUrl='" + imageUrl + '\'' +
+                ", name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                ", webType='" + webType + '\'' +
+                ", idx=" + idx +
+                ", url='" + url + '\'');
     }
 }

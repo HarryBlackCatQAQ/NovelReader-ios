@@ -15,10 +15,20 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var sb: UISearchBar!
     
     let ServerUrl = "http://localhost:8080/searching"
+    let par:NSMutableDictionary = NSMutableDictionary()
+        
     var arrTitle:[String] = [String]()
     var arrAuthor:[String] = [String]()
     var arrImage = [UIImage]()
     var isSearch:Bool = false
+    
+    var sendimageUrl:[String] = [String]()
+    var sendauthor:[String] = [String]()
+    var sendidx:[String] = [String]()
+    var sendwebType:[String] = [String]()
+    var sendurl:[String] = [String]()
+    var sendname:[String] = [String]()
+    var sendhtmlContent:[String] = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,23 +39,24 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         Alamofire.request(ServerUrl, method: .get,  parameters: ["content":bookName]).responseJSON{ (data) in
             if data.result.isSuccess {
                 
-                //https://www.vodtw.com/DownFiles/Book/BookCover/douluodalu%E2%85%A3zhongjidouluo.jpg
                 var jsonData:JSON
                 jsonData = (self.didRecieveResults(results: data.result.value as AnyObject))
-                
-                //print("count:\(jsonData.count)")
                 
                 let num:Int = jsonData.count
                 var ImgUrl = ""
                 for index in 0...(num-1){
+                    self.sendimageUrl.append(jsonData[index]["imageUrl"].stringValue)
+                    self.sendauthor.append(jsonData[index]["author"].stringValue)
+                    self.sendidx.append(jsonData[index]["idx"].stringValue)
+                    self.sendwebType.append(jsonData[index]["webType"].stringValue)
+                    self.sendurl.append(jsonData[index]["url"].stringValue)
+                    self.sendname.append(jsonData[index]["name"].stringValue)
+                    self.sendhtmlContent.append(jsonData[index]["htmlContent"].stringValue)
+                    
                     self.arrTitle.append(jsonData[index]["name"].stringValue)
                     self.arrAuthor.append(jsonData[index]["author"].stringValue)
-                    
                     ImgUrl = (jsonData[index]["imageUrl"].stringValue)
-                    
-                    print(ImgUrl)
                     let url = URL(string: ImgUrl)
-                    print(url as Any)
                     if(url != nil){
                         let data = try? Data(contentsOf: url!)
                         let image = UIImage(data: data!)
@@ -55,21 +66,16 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                     }
                 }
                 self.tv.reloadData()
-                
-                //print("===" + (self.didRecieveResults(results: data.result.value as AnyObject)))
             }else{
                 print("DATA获取失败")
             }
         }
     }
     
+    
     func didRecieveResults(results: AnyObject) -> JSON{
         let json = JSON(results)
-        print(json)
         return json
-        //let idx = json[0]["name"].stringValue
-        //print(idx)
-        //return idx;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -85,18 +91,37 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         cell.detailTextLabel!.text = arrAuthor[index]
 
         cell.imageView!.image = arrImage[index]
-        //cell.imageView!.image = arrImage[index]
         
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-//    
-//        self.performSegue(withIdentifier: "bookdetails", sender: self)
-//    
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+    
+        self.performSegue(withIdentifier: "bookdetails", sender: self)
+        
+        print("choose index:\(indexPath.item)") // 选了哪本书
+        
+        par["imageUrl"] = sendurl[indexPath.item]
+        par["name"] = sendname[indexPath.item]
+        par["author"] = sendauthor[indexPath.item]
+        par["webType"] = sendwebType[indexPath.item]
+        par["idx"] = sendidx[indexPath.item]
+        par["url"] = sendurl[indexPath.item]
+        par["htmlContent"] = sendhtmlContent[indexPath.item]
+        
+        print(par)
 
+        print("=== send succeed! ===")
 
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        //页面跳转传值 法1：segue
+        let destVc:bookDetails = segue.destination as! bookDetails
+        destVc.message = par
+        
+    }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         isSearch = false
@@ -105,12 +130,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         self.tv.reloadData()
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
-        onSearch(str: searchText)
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("search button")
         onSearch(str: sb.text!)
         self.sb.resignFirstResponder()
     }
